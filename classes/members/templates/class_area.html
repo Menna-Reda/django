@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Class Area</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <h2>Class Area</h2>
+
+    <form method="GET" action="{% url 'class_area' %}">
+        <label for="height">Height (m):</label>
+        <input type="number" name="height" value="{{ height }}">
+
+        <label for="width">Width (m):</label>
+        <input type="number" name="width" value="{{ width }}">
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if area is not None %}
+        <h3>Result</h3>
+        <p>Area: <strong>{{ area }}</strong> m²</p>
+    {% endif %}
+
+</body>
+</html>

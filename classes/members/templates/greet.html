@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Page</title>
+</head>
+<body>
+
+
+        <h2>Hello, {{ name }}!</h2>
+        <p>{{ description|slice:":500" }}{% if description|length > 500 %}...{% endif %}</p>
+</body>
+</html>
